@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-backend
+  template:
+    metadata:
+      labels:
+        app: spring-backend
+    spec:
+      containers:
+        - name: spring-backend
+          image: jayesh1410/spring-backend:build-1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: url
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: username
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: password
+

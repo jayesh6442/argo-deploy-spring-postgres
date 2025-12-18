@@ -1,0 +1,7 @@
+resources:
+  - ../../base
+
+images:
+  - name: jayesh1410/spring-backend
+    newTag: build-1
+
