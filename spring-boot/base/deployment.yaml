@@ -16,7 +16,7 @@ spec:
         - name: spring-backend
           image: jayesh1410/spring-backend:build-1
           ports:
-            - containerPort: 8081
+            - containerPort: 8080
           env:
             - name: SPRING_DATASOURCE_URL
               valueFrom:
