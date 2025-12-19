@@ -3,5 +3,5 @@ resources:
 
 images:
   - name: jayesh1410/spring-backend
-    newTag: build-1
+    newTag: build-15
 
